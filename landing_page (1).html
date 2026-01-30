@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcquisitionOS & AI Investor Mastermind</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 20px;
+            border-bottom: 1px solid #222;
+        }
+
+        .yellow {
+            color: #FFB800;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 20px 80px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #aaa;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Headings */
+        h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #999;
+            margin-bottom: 60px;
+        }
+
+        /* Three Column */
+        .three-col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .col-box {
+            background: #0a0a0a;
+            padding: 40px;
+            border: 1px solid #222;
+        }
+
+        .col-box h3 {
+            font-size: 24px;
+            color: #FFB800;
+            margin-bottom: 15px;
+        }
+
+        .col-box p {
+            color: #ccc;
+            font-size: 16px;
+        }
+
+        /* Bullets */
+        .bullets {
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+
+        .bullets ul {
+            list-style: none;
+        }
+
+        .bullets li {
+            padding: 18px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 18px;
+            color: #ccc;
+            border-bottom: 1px solid #111;
+        }
+
+        .bullets li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #FFB800;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        /* Partner Box */
+        .partner-box {
+            background: #0a0a0a;
+            border: 2px solid #FFB800;
+            padding: 50px;
+            text-align: center;
+            max-width: 700px;
+            margin: 60px auto;
+        }
+
+        .partner-box h3 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .partner-box p {
+            font-size: 18px;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        /* Learning Box */
+        .learning-box {
+            background: #0a0a0a;
+            border-left: 4px solid #FFB800;
+            padding: 40px;
+            margin: 60px auto;
+            max-width: 800px;
+        }
+
+        .learning-box h3 {
+            font-size: 28px;
+            color: #FFB800;
+            margin-bottom: 20px;
+        }
+
+        .learning-box p {
+            font-size: 17px;
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .learning-box strong {
+            color: #fff;
+        }
+
+        /* Steps */
+        .steps {
+            max-width: 700px;
+            margin: 60px auto 0;
+        }
+
+        .step {
+            margin-bottom: 50px;
+            padding-left: 70px;
+            position: relative;
+        }
+
+        .step-num {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            background: #FFB800;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        .step h4 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: #ccc;
+        }
+
+        /* Refund Box */
+        .refund-box {
+            background: #FFB800;
+            color: #000;
+            padding: 50px;
+            text-align: center;
+            max-width: 700px;
+            margin: 60px auto;
+        }
+
+        .refund-box h3 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .refund-box p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* Ways */
+        .ways {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 60px;
+        }
+
+        .way {
+            background: #0a0a0a;
+            border: 1px solid #222;
+            padding: 35px 25px;
+            text-align: center;
+        }
+
+        .way h4 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        /* Deal Cards */
+        .deals {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 60px;
+        }
+
+        .deal {
+            background: #000000;
+            border: 1px solid #222;
+            padding: 35px;
+        }
+
+        .deal-tag {
+            font-size: 11px;
+            color: #FFB800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .deal-amount {
+            font-size: 48px;
+            font-weight: 700;
+            color: #FFB800;
+            margin-bottom: 18px;
+        }
+
+        .deal-desc {
+            font-size: 14px;
+            color: #999;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 36px; }
+            .three-col, .ways, .deals { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <p style="font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 30px;">Powered by Prime Acquisitions Group</p>
+            <h1>AI-Powered Acquisition System<br><span class="yellow">+ Deal Execution Partners</span></h1>
+            <p>12-month system that installs AI, automation, and investor-level execution into your business.</p>
+        </div>
+    </section>
+
+    <!-- The System -->
+    <section>
+        <div class="container">
+            <h2>This Is Not a Course</h2>
+            <p class="subtitle">This is a working acquisition machine.</p>
+            
+            <div class="three-col">
+                <div class="col-box">
+                    <h3>AI Systems Source</h3>
+                    <p>Email automation, Facebook groups, website intake—all finding off-market deals while you sleep.</p>
+                </div>
+                <div class="col-box">
+                    <h3>You'll Learn</h3>
+                    <p>How to structure LOIs, conduct due diligence, negotiate with sellers, match with buyers, and close transactions.</p>
+                </div>
+                <div class="col-box">
+                    <h3>You Choose</h3>
+                    <p>Close deals yourself or partner with us. System works either way.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section style="background: #0a0a0a;">
+        <div class="container">
+            <div class="partner-box">
+                <h3>Want to Partner? 30/70 Split</h3>
+                <p>If you want to bring us deals instead of closing yourself:</p>
+                <p style="margin-top: 20px;">You source the seller using our AI systems. We handle LOIs, due diligence, buyer matching, and closing. 30/70 split on closed deals.</p>
+                <p style="margin-top: 20px; font-weight: 600;">Example: $500K deal = $150K to you + full refund on first close</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Systems -->
+    <section>
+        <div class="container">
+            <h2><span class="yellow">AI Systems</span> That Find Deals</h2>
+            <p class="subtitle">Three automated systems running 24/7</p>
+            
+            <div class="bullets">
+                <ul>
+                    <li>Email Automation with AI - Automated outreach, follow-ups, conversations in your inbox</li>
+                    <li>Facebook Group Systems with AI - Automated engagement, off-market opportunities</li>
+                    <li>Website Systems with AI - Deal intake, qualification, scoring, automated analysis</li>
+                    <li>7 AI Deal Agents - Financial analysis, risk flagging, offer structuring, deal comparison</li>
+                    <li>Deal Advisor GPT - On-demand AI analyst, challenges assumptions, available 24/7</li>
+                    <li>Complete A-Z Framework - Sourcing to monetization, templates, structures, strategies</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Deals -->
+    <section style="background: #0a0a0a;">
+        <div class="container">
+            <h2>Real Deals. Real <span class="yellow">Closings</span>.</h2>
+            
+            <div class="deals">
+                <div class="deal">
+                    <div class="deal-tag">05/08/25 DENTAL PRACTICE (BUY)</div>
+                    <div class="deal-amount">$2.1M</div>
+                    <div class="deal-desc">Sourcing agent identified it, buyer network had three offers in forty eight hours. Structured with 40% down and 60% seller financing over 5 years.</div>
+                </div>
+                <div class="deal">
+                    <div class="deal-tag">04/19/25 DTC BRAND (BUY)</div>
+                    <div class="deal-amount">$3.3M</div>
+                    <div class="deal-desc">Negotiation agent helped structure with 30% down, 50% seller carry at 6% over 7 years, and 20% earn-out. Done in fifty two days.</div>
+                </div>
+                <div class="deal">
+                    <div class="deal-tag">03/14/25 SAAS PLATFORM (FLIP)</div>
+                    <div class="deal-amount">$220K</div>
+                    <div class="deal-desc">AI agents found the deal, ran comps, and drafted the LOI. Closed and flipped in under sixty days.</div>
+                </div>
+                <div class="deal">
+                    <div class="deal-tag">02/28/25 MED SPA (BUY)</div>
+                    <div class="deal-amount">$195K</div>
+                    <div class="deal-desc">Off-market opportunity from Facebook group automation. Structured with seller financing and revenue-based earn-out.</div>
+                </div>
+                <div class="deal">
+                    <div class="deal-tag">03/22/25 ECOMMERCE (FLIP)</div>
+                    <div class="deal-amount">$185K</div>
+                    <div class="deal-desc">Diligence agent pulled financials in minutes. Buyer network closed it fast. Flipped for immediate profit.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learn By Doing -->
+    <section style="background: #0a0a0a;">
+        <div class="container">
+            <h2>You Get: <span class="yellow">Weekly Execution Rooms</span></h2>
+            
+            <div class="learning-box">
+                <h3>Every Wednesday, 12pm MST</h3>
+                <p>Not lectures. Real deal execution rooms where you'll learn:</p>
+                <ul style="list-style: none; padding-left: 0; margin-top: 20px;">
+                    <li style="padding: 8px 0; padding-left: 25px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #FFB800;">✓</span>
+                        How to break down live deals
+                    </li>
+                    <li style="padding: 8px 0; padding-left: 25px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #FFB800;">✓</span>
+                        How to structure LOIs and offers
+                    </li>
+                    <li style="padding: 8px 0; padding-left: 25px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #FFB800;">✓</span>
+                        How to negotiate with sellers
+                    </li>
+                    <li style="padding: 8px 0; padding-left: 25px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #FFB800;">✓</span>
+                        How to match with buyers (2,000+ network access)
+                    </li>
+                    <li style="padding: 8px 0; padding-left: 25px; position: relative;">
+                        <span style="position: absolute; left: 0; color: #FFB800;">✓</span>
+                        How to close transactions
+                    </li>
+                </ul>
+                <p style="margin-top: 20px;">You bring opportunities from the AI systems. We show you how to move them forward—whether you're closing yourself or partnering with us.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multiple Paths -->
+    <section>
+        <div class="container">
+            <h2>Multiple Ways to <span class="yellow">Monetize</span></h2>
+            <p class="subtitle">You're not stuck with one outcome</p>
+            
+            <div class="ways">
+                <div class="way">
+                    <h4>Close Yourself<br>(Keep 100%)</h4>
+                </div>
+                <div class="way">
+                    <h4>Partner With Us<br>(30/70 Split)</h4>
+                </div>
+                <div class="way">
+                    <h4>Flip Deals</h4>
+                </div>
+                <div class="way">
+                    <h4>Consulting for Equity</h4>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 50px; color: #ccc; font-size: 17px;">System works whether you're buying or partnering.</p>
+        </div>
+    </section>
+
+    <!-- First Deal Refund -->
+    <section style="background: #0a0a0a;">
+        <div class="container">
+            <div class="refund-box">
+                <h3>First Deal Refund Guarantee</h3>
+                <p>Close your first deal = full refund.</p>
+                <p style="margin-top: 20px;">Whether you close it yourself or partner with us, when you source a deal using the AI systems and execute through the weekly rooms—you get your full investment back.</p>
+                <p style="margin-top: 20px; font-weight: 600;">You keep the outcome. You keep the system. You keep everything.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section>
+        <div class="container">
+            <h2>How It <span class="yellow">Works</span></h2>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h4>Week 1: Activation</h4>
+                    <p>Platform access. AI systems live. Automation deployed.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h4>Weeks 2-3: Pipeline Build</h4>
+                    <p>Outbound goes live. First seller conversations. Weekly execution begins.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h4>Months 2-3: Deal Flow</h4>
+                    <p>Consistent opportunities. AI analyzing everything. First deals moving.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <h4>Months 4-12: Execution</h4>
+                    <p>Multiple deals in motion. Closing yourself or partnering. System runs on autopilot.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final -->
+    <section style="background: #0a0a0a;">
+        <div class="container">
+            <h2>The <span class="yellow">Reality</span></h2>
+            
+            <div class="bullets">
+                <ul>
+                    <li>Most buyers look at 2-3 deals per year and hope one works</li>
+                    <li>With this system, you'll look at 12-24+ deals with AI-powered analysis</li>
+                    <li>You'll learn to close your own deals or partner with us</li>
+                    <li>Multiple ways to monetize every opportunity</li>
+                    <li>12 months of systems, support, and execution</li>
+                </ul>
+            </div>
+
+            <p style="text-align: center; font-size: 22px; color: #ccc; margin-top: 60px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                We don't sell information.<br>
+                We install acquisition systems and teach you to execute.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>We are advisory partners and technology providers, not lenders, brokers, or law firms. We provide AI systems and deal execution guidance. We cannot guarantee deal closings or outcomes. All decisions are made by you or independent third parties. Partnership commission payments (if applicable) are contingent on successful closings. You're responsible for final decisions on any transaction and should work with your own legal, tax, and financial advisors.</p>
+        </div>
+    </footer>
+</body>
+</html>
